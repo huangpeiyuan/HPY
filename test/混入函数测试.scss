@@ -1,0 +1,38 @@
+// 为了一会 使用的时候 有提示 写在index页面中
+
+// 计算尺寸函数
+@function p2r($size){
+    @return ($size/32)*1rem;
+}
+
+// 设置图片居中
+// background center
+@mixin bgc($url,$width) {
+    background: url($url) no-repeat center /100% 100%;
+    position: absolute;
+    left: 50%;
+    // 这里 使用 margin-left来实现 左右居中目的是 为了 后面动画中 我们要使用 transform 来改变元素
+    margin-left: p2r(-$width/2);
+}
+
+// 直接设置背景图 不考虑居中
+@mixin bg($url) {
+    background: url($url) no-repeat center /100% 100%;
+    position: absolute;
+}
+
+// 设置尺寸
+@mixin size($width,$height) {
+    width: p2r($width);
+    height: p2r($height);
+}
+
+body{
+    height: p2r(100);
+    @include bgc('../image/mem.png',100);
+}
+
+div{
+    @include bg('../image/mem.png');
+    @include size(100,200);
+}

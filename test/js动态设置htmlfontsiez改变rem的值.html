@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- 这一段 js 需要放在 引入文件 之前 保证执行速度 -->
+     <script>
+        // 屏幕宽度
+        // 浏览器中 可视的区域
+        // console.log(window.screen.availWidth);
+        // 设备的屏幕宽度
+        // 这两个值 大小不一 桌面端需要注意 移动端 用哪个都可以
+        // console.log(window.screen.width);
+
+        // 页面打开执行
+        document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+        // 尺寸发生更改 重新计算
+        window.onresize = function(){
+            document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

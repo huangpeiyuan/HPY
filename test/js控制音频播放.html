@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio loop src="../music/hlw.mp3"></audio>
+
+    <input type="button" value="播放">
+</body>
+</html>
+<script>
+    // audio 获取
+    var audioDom = document.querySelector('audio');
+
+    document.querySelector('input').onclick = function(){
+        // 到底是在播放 还是没有播放
+        // 没有播放时 是 true
+        // 播放时 是 flase
+        if(audioDom.paused == true){
+            audioDom.play();
+        }else{
+            audioDom.pause();
+        }
+              
+    }
+</script>

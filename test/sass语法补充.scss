@@ -1,0 +1,25 @@
+// 函数 可以把一些运算的功能抽取出来 作为函数 这样直接调用即可
+// (xxx/32) *1rem
+@function p2r($size){
+    @return ($size/32)*1rem;
+}
+
+body{
+    width: p2r(20);
+    height: p2r(100);
+}
+
+// 混入
+// 插入一些样式名 属性名 属性值 都可以写上
+// backgroumd center
+@mixin bgc($url,$width) {
+    background: url($url) no-repeat center / 100% 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: (-$width/32/2)*1rem;
+}
+
+// 使用混入
+.bearBox{
+    @include bgc('../images/bear/rider.png',200);
+}

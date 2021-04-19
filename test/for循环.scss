@@ -1,0 +1,8 @@
+// $i js循环中的 var i = 0
+@for $i from 1 through 120 {
+    // #{} 包裹要输出的内容
+    // .item-#{$i} { width: 2em * $i; }
+    .gift>div:nth-child(#{$i}){
+        animation: rotate 1s $i*0.1s infinite;
+    }
+}
